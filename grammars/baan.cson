@@ -1,0 +1,82 @@
+'fileTypes': [
+  'bc'
+]
+'name': 'BaaN'
+
+'patterns': [
+
+  {
+    'match': '^\\s*(#include)'
+    'captures':
+      '1':
+        'name': 'comment.line.baan'
+  }
+
+  {
+    'match': '^\\s*(#define)\\s+([a-zA-Z0-9_\.]+)'
+    'captures':
+      '1':
+        'name': 'keyword.define.baan'
+      '2':
+        'name': 'constant.baan'
+  }
+
+  {
+    'match': '^\\s*(#ident)'
+    'captures':
+      '1':
+        'name': 'keyword.ident.baan'
+  }
+
+  {
+      'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+      'name': 'markup.italic.baan'
+  }
+
+  {
+    'match': '\\|(.*)'
+    'captures':
+      '1':
+        'name': 'punctuation.section.comment.baan'
+
+    'name': 'comment.pipe.baan'
+  }
+
+  {
+    'match': '\\b(long|double|string)\\s+([a-zA-Z0-9_\.]+)'
+    'captures':
+        '1':
+            'name': 'variable.language.baan'
+        '2':
+            'name': 'keyword.control.baan'
+
+    'name': 'meta.declaration.baan'
+  }
+
+
+  {
+    'match': '\\b(domain)\\s+([a-zA-Z0-9_\.]+)\\s+([a-zA-Z0-9_\.]+)\\s+([a-zA-Z0-9_\.]+)'
+    'captures':
+        '1':
+            'name': 'storage.type.function.baan'
+        '2':
+            'name': 'storage.type.function.baan'
+
+    'name': 'meta.declaration.baan'
+  }
+
+  {
+      'begin': '\"'
+      'beginCaptures':
+          '0':
+              'name': 'punctuation.definition.string.begin.baan'
+      'end': '\"'
+      'endCaptures':
+          '0':
+              'name': 'punctuation.definition.string.end.baan'
+      'name': 'string.quoted.single.baan'
+  }
+
+]
+
+'scopeName': 'source.baan'
