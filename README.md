@@ -1,2 +1,4 @@
-# language-baan
-BaaN Syntax Highlighting for Atom
+language-baan
+=========
+
+BaaN language support in Atom Editor.
