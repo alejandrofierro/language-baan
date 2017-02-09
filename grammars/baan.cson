@@ -1,3 +1,5 @@
+
+
 'fileTypes': [
   'bc'
 ]
@@ -9,17 +11,24 @@
     'match': '^\\s*(#include)'
     'captures':
       '1':
+        'name': 'constant.language.baan'
+  }
+
+  {
+    'match': '^\\s*(#define)'
+    'captures':
+      '1':
         'name': 'comment.line.baan'
   }
 
   {
-    'match': '^\\s*(#define)\\s+([a-zA-Z0-9_\.]+)'
+    'match': '\\s*([A-Z\.]+)'
     'captures':
       '1':
-        'name': 'keyword.define.baan'
-      '2':
-        'name': 'constant.baan'
+        'name': 'constant.character.baan'
   }
+
+
 
   {
     'match': '^\\s*(#ident)'
@@ -30,7 +39,7 @@
 
   {
       'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
-      'name': 'markup.italic.baan'
+      'name': 'variable.language.baan'
   }
 
   {
@@ -75,6 +84,86 @@
           '0':
               'name': 'punctuation.definition.string.end.baan'
       'name': 'string.quoted.single.baan'
+  }
+
+  {
+        'match': '(\\ba:|\\babort.program[\\:]{0,1}|\\babort.transaction|'     +
+                 '\\badd.set[\\:]{0,1}|\\bafter.choice:|\\bafter.delete:|'     +
+                 '\\bafter.display:|\\bafter.field:|\\bafter.form:|'           +
+                 '\\bafter.input:|\\bafter.layout:|\\bafter.program:|'         +
+                 '\\bafter.read:|\\bafter.receive.data:|\\bafter.report:|'     +
+                 '\\bafter.rewrite:|\\bafter.skip.delete:|'                    +
+                 '\\bafter.skip.rewrite:|\\bafter.skip.write:|'                +
+                 '\\bafter.update.db.commit:|\\bafter.write:|\\bafter.zoom:|'  +
+                 '\\bask.helpinfo|\\bask.helpinfo:|\\bb:|'                     +
+                 '\\bbefore.checks:|\\bbefore.choice:|\\bbefore.delete:|'	     +
+                 '\\bbefore.display:|\\bbefore.display.object:|'				       +
+                 '\\bbefore.field:|\\bbefore.form:|\\bbefore.input:|'          +
+                 '\\bbefore.layout:|\\bbefore.new.object:|\\bbefore.print:|'   +
+                 '\\bbefore.program:|\\bbefore.read:|\\bbefore.report:|'       +
+                 '\\bbefore.rewrite:|\\bbefore.write:|\\bbefore.zoom:|'        +
+                 '\\bbms[\\:]{0,1}|\\bc:|\\bcalculator[\\:]{0,1}|\\bcalendar:|'+
+                 '\\bchange.frm[\\:]{0,1}|\\bchange.order[\\:]{0,1}|'  		     +
+                 '\\bcheck.input:|\\bchm[\\:]{0,1}|\\bchoice.start.set:|'	     +
+                 '\\bchoice.first.view:|\\bchoice.next.view:|'				         +
+                 '\\bchoice.prev.view:|\\bchoice.last.view:|\\bcalendar|'      +
+                 '\\bchoice.def.find:|\\bchoice.find.data:|'                   +
+                 '\\bchoice.first.set:|\\bchoice.next.set:|'                   +
+                 '\\bchoice.display.set:|\\bchoice.prev.set:|'                 +
+                 '\\bchoice.rotate.curr:|\\bchoice.last.set:|'                 +
+                 '\\bchoice.add.set:|\\bchoice.update.db:|'                    +
+                 '\\bchoice.dupl.occur:|\\bchoice.recover.set:|'               +
+                 '\\bchoice.mark.delete:|\\bchoice.mark.occur:|'               +
+                 '\\bchoice.change.order:|\\bchoice.modify.set:|'              +
+                 '\\bchoice.print.data:|\\bchoice.create.job:|'                +
+                 '\\bchoice.form.tab.change:|\\bchoice.first.frm:|'            +
+                 '\\bchoice.next.frm:|\\bchoice.prev.frm:|\\bchoice.last.frm:|'+
+                 '\\bchoice.resize.frm:|\\bchoice.cmd.options:|'               +
+                 '\\bchoice.zoom:|\\bchoice.interrupt:|\\bchoice.end.program:|'+
+                 '\\bchoice.abort.program:|\\bchoice.text.manager:|'			     +
+                 '\\bchoice.run.job:|\\bchoice.global.delete:|'				         +
+                 '\\bchoice.global.copy:|\\bchoice.save.defaults:|'			       +
+                 '\\bchoice.get.defaults:|\\bchoice.start.chart:|'             +
+                 '\\bchoice.start.query:|\\bchoice.ask.helpinfo:|'             +
+                 '\\bchoice.calculator:|\\bchoice.calendar:|\\bchoice.bms:|'   +
+                 '\\bchoice.cmd.whats.this:|\\bchoice.help.index:|'            +
+                 '\\bchoice.restart.input:|\\bchoice.cont.process:|'           +
+                 '\\bchoice.user.[0-9]{1,2}[\\:]{1}|\\bcont.process[\\:]{0,1}|'+
+                 '\\bchoice.user.[0-9]{1,2}\\b|\\bfirst.frm[\\:]{0,1}|'        +
+                 '\\bcreate.job[\\:]{0,1}|\\bdeclaration:|\\bheader|'          +
+                 '\\bdef.find[\\:]{0,1}|\\bdetail.|\\bdomain.error:|'          +
+                 '\\bdupl.occur[\\:]{0,1}|\\bend.program[\\:]{0,1}|'           +
+                 '\\bf:|\\bfield.|\\bfield.all:|\\bfield.help:|'               +
+                 '\\bfield.other:|\\bfind.data[\\:]{0,1}|'                     +
+                 '\\bfirst.set[\\:]{0,1}|\\bfirst.view[\\:]{0,1}|\\bfooter|'   +
+                 '\\bform.all:|\\bform.other:|\\bfunctions:|'                  +
+                 '\\bglobal.copy[\\:]{0,1}|\\bget.defaults[\\:]{0,1}|'         +
+                 '\\bglobal.delete[\\:]{0,1}|\\bhelp.index[\\:]{0,1}|'         +
+                 '\\binit.field:|\\binit.form:|\\binterrupt[\\:]{0,1}|'        +
+                 '\\blast.frm[\\:]{0,1}|\\blast.set[\\:]{0,1}|'                +
+                 '\\blast.view[\\:]{0,1}|\\bmain.table.io:|'                   +
+                 '\\bmake.resident[\\:]{0,1}|\\bmark.delete[\\:]{0,1}|'        +
+                 '\\bmark.occur[\\:]{0,1}|\\bmodify.set[\\:]{0,1}|'            +
+                 '\\bnext.frm[\\:]{0,1}|\\bnext.halfset[\\:]{0,1}|'            +
+                 '\\bnext.set[\\:]{0,1}|\\bnext.view[\\:]{0,1}|\\bon.choice:|' +
+                 '\\bon.entry:|\\bon.error:|\\bon.exit:|\\bon.input:|'         +
+                 '\\boptions[\\:]{0,1}|\\bprev.frm[\\:]{0,1}|\\bref.display:|' +
+                 '\\bprev.halfset[\\:]{0,1}|\\bprev.set[\\:]{0,1}|'            +
+                 '\\bprev.view[\\:]{0,1}|\\bprint.data[\\:]{0,1}|'             +
+                 '\\bread.view:|\\brecover.set[\\:]{0,1}|\\bref.input:|'       +
+                 '\\bresize.frm[\\:]{0,1}|\\brestart.input[\\:]{0,1}|'         +
+                 '\\brun.job[\\:]{0,1}|\\bsave.defaults[\\:]{0,1}|'            +
+                 '\\bscreendump[\\:]{0,1}|\\bset.tabstops[\\:]{0,1}|'          +
+                 '\\bstart.query[\\:]{0,1}|\\bstart.set[\\:]{0,1}|'            +
+                 '\\btext.manager[\\:]{0,1}|\\bto.shell[\\:]{0,1}|'            +
+                 '\\bupdate.db[\\:]{0,1}|\\buser.[0-9]{1,2}[\\:]{1}|'          +
+                 '\\buser.[0-9]{1,2}\\b|'                                      +
+                 '\\bwhen.field.changes:|\\bz:|\\bzoom.from.all:|'             +
+                 '\\bzoom.from.other:|\\bzoom.from.|\\bzoom[\\:]{0,1})'
+
+    'captures':
+        '1':
+            'name': 'storage.type.function.baan'
   }
 
 ]
