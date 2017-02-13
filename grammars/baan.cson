@@ -7,41 +7,7 @@
 
 'patterns': [
 
-  {
-    'match': '^\\s*(#include)'
-    'captures':
-      '1':
-        'name': 'constant.language.baan'
-  }
-
-  {
-    'match': '^\\s*(#define)'
-    'captures':
-      '1':
-        'name': 'comment.line.baan'
-  }
-
-  {
-    'match': '\\s*([A-Z\.]+)'
-    'captures':
-      '1':
-        'name': 'constant.character.baan'
-  }
-
-
-
-  {
-    'match': '^\\s*(#ident)'
-    'captures':
-      '1':
-        'name': 'keyword.ident.baan'
-  }
-
-  {
-      'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
-      'name': 'variable.language.baan'
-  }
-
+  #Comments
   {
     'match': '\\|(.*)'
     'captures':
@@ -51,8 +17,34 @@
     'name': 'comment.pipe.baan'
   }
 
+  #All reserved words starting with #
   {
-    'match': '\\b(long|double|string)\\s+([a-zA-Z0-9_\.]+)'
+    'match': '\\s*(#define|#include|#error|#ident|#elif|#if|#line|#else|'      +
+             '#ifdef|#pragma|#endif|#ifndef|#undef)\\s'
+
+    'captures':
+      '1':
+        'name': 'constant.language.baan'
+  }
+
+  #Constants
+  {
+    'match': '\\b([A-Z\\.]+)\\s'
+    'captures':
+      '1':
+        'name': 'constant.character.baan'
+  }
+
+  #Numbers for Integers and Doubles
+  {
+      'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+      'name': 'variable.language.baan'
+  }
+
+
+
+  {
+    'match': '\\b(long|double|string|float)\\s+([a-zA-Z0-9_\.]+)'
     'captures':
         '1':
             'name': 'variable.language.baan'
@@ -86,6 +78,7 @@
       'name': 'string.quoted.single.baan'
   }
 
+  #Keywords 1
   {
         'match': '(\\ba:|\\babort.program[\\:]{0,1}|\\babort.transaction|'     +
                  '\\badd.set[\\:]{0,1}|\\bafter.choice:|\\bafter.delete:|'     +
@@ -165,7 +158,24 @@
         '1':
             'name': 'storage.type.function.baan'
   }
+  #Keywords 2
+  {
+        'match': '(\\bprepared|\\bas|\\band|\\bat|\\bbase|\\bbased|\\bbreak|'  +
+                 '\\bdefault|\\bdb.retry|\\bdesc|\\belse|\\bextern|\\bendif|'  +
+                 '\\bbetween|\\bboolean|\\bcase|\\bconst|\\bcontinue|'		     +
+                 '\\bendselect|\\bendfor|\\bendcase|\\bendwhile|'              +
+                 '\\bfrom|\\bfunction|\\bfixed|\\bgoto|\\bgroup|\\bhaving|'    +
+                 '\\s*if|\\binrange|\\blocal|\\bnot|\\border|\\bon|\\bor|'     +
+                 '\\browse|\\brefers|\\bretry|\\bstatic|\\bselect|'            +
+                 '\\bselectempty|\\bselecteos|\\bset|\\bsum|\\bthen|\\bto|'    +
+                 '\\buntil|\\bupdate|\\bvoid|\\bwhile|\\bwhere|\\bwith|\\bby|' +
+                 '\\bcommon|\\bfor|\\bhint|\\brepeat|\\bselectdo|\\btable)'
 
+
+    'captures':
+        '1':
+            'name': 'storage.type.function.baan'
+  }
 ]
 
 'scopeName': 'source.baan'
