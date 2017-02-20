@@ -1,9 +1,12 @@
 
+'name': 'BaaN'
+'comment': 'BaaN language'
+'scopeName': 'source.bc'
 
 'fileTypes': [
   'bc'
 ]
-'name': 'BaaN'
+
 
 'patterns': [
 
@@ -66,6 +69,7 @@
     'name': 'meta.declaration.baan'
   }
 
+  #Strings
   {
       'begin': '\"'
       'beginCaptures':
@@ -77,6 +81,32 @@
               'name': 'punctuation.definition.string.end.baan'
       'name': 'string.quoted.single.baan'
   }
+
+  #FunctionUsage
+  {
+      'begin': 'FunctionUsage'
+      'beginCaptures':
+          '0':
+              'name': 'punctuation.definition.function.begin.baan'
+      'end': 'EndFunctionUsage'
+      'endCaptures':
+          '0':
+              'name': 'punctuation.definition.function.end.baan'
+      'name': 'entity.name.section.baan'
+  }
+
+    #DllUsage
+    {
+        'begin': 'DllUsage'
+        'beginCaptures':
+            '0':
+                'name': 'punctuation.definition.function.begin.baan'
+        'end': 'EndDllUsage'
+        'endCaptures':
+            '0':
+                'name': 'punctuation.definition.function.end.baan'
+        'name': 'entity.name.section.baan'
+    }
 
   #Keywords 1
   {
@@ -166,10 +196,11 @@
                  '\\bendselect|\\bendfor|\\bendcase|\\bendwhile|'              +
                  '\\bfrom|\\bfunction|\\bfixed|\\bgoto|\\bgroup|\\bhaving|'    +
                  '\\s*if|\\binrange|\\blocal|\\bnot|\\border|\\bon|\\bor|'     +
-                 '\\browse|\\brefers|\\bretry|\\bstatic|\\bselect|'            +
+                 '\\browse|\\brefers|\\bretry|\\bstatic|'            +
                  '\\bselectempty|\\bselecteos|\\bset|\\bsum|\\bthen|\\bto|'    +
-                 '\\buntil|\\bupdate|\\bvoid|\\bwhile|\\bwhere|\\bwith|\\bby|' +
-                 '\\bcommon|\\bfor|\\bhint|\\brepeat|\\bselectdo|\\btable)'
+                 '\\buntil|\\bupdate|\\bvoid|\\bwhile|\\bwhere\\b|\\bwith|\\bby|' +
+                 '\\bcommon|\\bfor|\\bhint|\\brepeat|\\bselectdo|\\btable|'    +
+                 '\\bselect\\b|\\bwherebind)'
 
 
     'captures':
@@ -436,5 +467,3 @@
             'name': 'storage.type.function.baan'
   }
 ]
-
-'scopeName': 'source.baan'

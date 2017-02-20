@@ -3,7 +3,14 @@
   "version": "0.8.0",
   "description": "BaaN language support for Atom",
   "dependencies": {},
-  "repository": "https://github.com/alejandrofierro/language-baan",
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/alejandrofierro/language-baan"
+  },
+  "keywords": [
+    "atom",
+    "baan"
+  ],
   "license": "MIT",
   "engines": {
     "atom": "*"

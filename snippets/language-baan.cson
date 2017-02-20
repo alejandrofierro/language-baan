@@ -1,0 +1,59 @@
+'.source.bc':
+  'FunctionUsage':
+    'prefix': 'fus'
+    'body': """
+      FunctionUsage
+        Expl   :$1
+        Pre    :$2
+        Post   :$3
+        Input  :$4
+        Output :$5
+        Returns:$6
+      EndFunctionUsage"
+    """
+  'DllUsage':
+      'prefix': 'dllu'
+      'body': """
+        DllUsage
+          Expl   :$1
+          Pre    :$2
+          Post   :$3
+          Input  :$4
+          Output :$5
+          Returns:$6
+        EndDllUsage"
+      """
+  'Basic Select':
+    'prefix': 'select'
+    'body': """
+        select  $1
+        from    $2
+        where   $2.$3 = $4
+        selectdo
+        endselect
+    """
+  'Basic Selectempty':
+    'prefix': 'selecte'
+    'body': """
+        select  $1
+        from    $2
+        where   $2.$3 = $4
+        selectdo
+          $5
+        selectempty
+          $6
+        endselect
+    """
+  'Select Wherebind':
+    'prefix': 'selectw'
+    'body': """
+        select  $1
+        from    $2
+        where   $2.$3 = $4
+        wherebind($5)
+        selectdo
+          $6
+        selectempty
+          $7
+        endselect
+    """
