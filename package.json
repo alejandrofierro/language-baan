@@ -1,6 +1,6 @@
 {
   "name": "language-baan",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "BaaN language support for Atom",
   "dependencies": {},
   "repository": "https://github.com/alejandrofierro/language-baan",
