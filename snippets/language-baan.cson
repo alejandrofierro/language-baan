@@ -9,7 +9,7 @@
         Input  :$4
         Output :$5
         Returns:$6
-      EndFunctionUsage"
+      EndFunctionUsage
     """
   'DllUsage':
       'prefix': 'dllu'

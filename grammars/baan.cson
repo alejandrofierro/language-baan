@@ -47,7 +47,7 @@
 
 
   {
-    'match': '\\b(long|double|string|float)\\s+([a-zA-Z0-9_\.]+)'
+    'match': '\\b(long|double|string|float)\\b'
     'captures':
         '1':
             'name': 'variable.language.baan'
