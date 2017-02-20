@@ -97,7 +97,7 @@
                  '\\bbefore.rewrite:|\\bbefore.write:|\\bbefore.zoom:|'        +
                  '\\bbms[\\:]{0,1}|\\bc:|\\bcalculator[\\:]{0,1}|\\bcalendar:|'+
                  '\\bchange.frm[\\:]{0,1}|\\bchange.order[\\:]{0,1}|'  		     +
-                 '\\bcheck.input:|\\bchm[\\:]{0,1}|\\bchoice.start.set:|'	     +
+                 '\\bcheck.input:|\\bchoice.start.set:|'	                     +
                  '\\bchoice.first.view:|\\bchoice.next.view:|'				         +
                  '\\bchoice.prev.view:|\\bchoice.last.view:|\\bcalendar|'      +
                  '\\bchoice.def.find:|\\bchoice.find.data:|'                   +
@@ -152,7 +152,7 @@
                  '\\bupdate.db[\\:]{0,1}|\\buser.[0-9]{1,2}[\\:]{1}|'          +
                  '\\buser.[0-9]{1,2}\\b|'                                      +
                  '\\bwhen.field.changes:|\\bz:|\\bzoom.from.all:|'             +
-                 '\\bzoom.from.other:|\\bzoom.from.|\\bzoom[\\:]{0,1})'
+                 '\\bzoom.from.other:|\\bzoom.from.|\\bzoom[\\:])'
 
     'captures':
         '1':
@@ -172,6 +172,265 @@
                  '\\bcommon|\\bfor|\\bhint|\\brepeat|\\bselectdo|\\btable)'
 
 
+    'captures':
+        '1':
+            'name': 'storage.type.function.baan'
+  }
+
+  #Keywords 3
+  {
+
+		    'match': '(\\bstart.|\\bd.child|\\b.with.child|\\bstart.session|'      +
+				          '\\benable.commands|\\babort|\\babort.io|'					         +
+        				  '\\babort.transaction|\\babs|\\bacos|\\bact.and.sleep|'      +
+          				'\\bactivate|\\bactivate.search|\\bafter.commit.transaction|'+
+          				'\\bafter.destroy.object|\\bafter.get.object|'               +
+          				'\\bafter.save.object|\\balloc.mem|\\bappl.delete|'          +
+          				'\\bappl.modify|\\bappl.set|\\bargc|\\bargv\\$|\\basc|\\basin|'+
+          				'\\bask.enum|\\bat.base|\\batan|\\baudit|\\bfunctions|'      +
+          				'\\baux.close|\\baux.open|\\baux.print|\\bappl.delete|'      +
+          				'\\bappl.get.user|\\bappl.modify|\\bappl.set|\\bbc\\$|'        +
+          				'\\bbefore.destroy.object|\\bbefore.get.object|'             +
+          				'\\bbefore.open.object.set|\\bbefore.save.object|\\bbell\\$|'  +
+          				'\\bbg\\$|\\bbit.and|\\bbit.exor|\\bbit.in|\\bbit.inv|'        +
+          				'\\bbit.or|\\bbit.shiftl|\\bbit.shiftr|\\bblank.all|'        +
+          				'\\bblue.component|\\bbms.add.mask|\\bbms.del.mask|'         +
+          				'\\bbms.receive.buffer|\\bbms.receive\\$|\\bbms.send|\\bbox|'  +
+          				'\\bbrp.close|\\bbrp.open|\\bbrp.open.language|\\bbrp.ready|'+
+          				'\\bbs\\$|\\bbshell.pid|\\bbse.dir\\$|\\bbse.release\\$|'          +
+          				'\\bbse.tmp.dir\\$|\\bcf\\$|\\bchange.mwindow|\\bchange.object|' +
+          				'\\bchange.password|\\bchange.progress.indicator|'           +
+          				'\\bchange.sub.object|\\bchange.window|\\bchanged|'          +
+          				'\\bcheck.all.input|\\bchm.axis.in|\\bchm.axis.out|'         +
+          				'\\bchm.chartman|\\bchm.data2domain.in|\\bchm.data.in|'      +
+          				'\\bchm.delete.data2domains|\\bchm.delete.data|'             +
+          				'\\bchm.delete.footnotes|\\bchm.delete.projections|'         +
+          				'\\bchm.delete.sets|\\bchm.disconnect|\\bchm.domain.in|'     +
+          				'\\bchm.domain.out|\\bchm.draw|\\bchm.first.data2domain.out|'+
+          				'\\bchm.first.data.out|\\bchm.first.footnote.out|'           +
+          				'\\bchm.first.projection.out|\\bchm.first.set.out|'          +
+          				'\\bchm.footnote.in|\\bchm.get.request|'                     +
+          				'\\bchm.next.data2domain.out|\\bchm.next.data.out|'          +
+          				'\\bchm.next.footnote.out|\\bchm.next.projection.out|'       +
+          				'\\bchm.next.set.out|\\bchm.new|\\bchm.open|'                +
+          				'\\bchm.projection.in|\\bchm.remove|\\bchm.scale.axis|'      +
+          				'\\bchm.select|\\bchm.set.in|\\bchm.set.option|'             +
+          				'\\bchm.set.timer|\\bchm.title.in|\\bchm.title.out|'         +
+          				'\\bchoice.again|\\bchoice.report|\\bchr\\$|\\bcl.screen|'   +
+          				'\\bclean.mess|\\bclose.message|\\bcmp.mem|'                 +
+          				'\\bcommit.transaction|\\bcompnr.check|\\bcompress.pixmap|'  +
+          				'\\bconcat\\$|\\bcopy.mem|\\bcos|\\bcosh|\\bcp\\$|\\bcr\\$|' +
+          				'\\bcreate.local.directory|\\bcreate.mwindow|\\bcreate.node|'+
+          				'\\bcreate.object|\\bcreate.progress.indicator|'             +
+          				'\\bcreate.sub.object|\\bcreate.sub.object.by.id|'           +
+          				'\\bcreat.tmp.file\\$|\\bcreate.tree.button|\\bcreate.tree|' +
+          				'\\bcs$|\\bcurrent.display|\\bcurrent.mwindow|'              +
+          				'\\bcurrent.window|\\bd.expr|\\bdal.count.error.messages|'   +
+          				'\\bdal.save.object|\\bdal.new.object|\\bdal.get.object|'    +
+          				'\\bdal.change.object|\\bdal.set.field|\\bdal.destroy|'      +
+          				'\\bdal.get.error.message|\\bdal.get.first.error.message|'   +
+          				'\\bdal.new|\\bdal.reset.error.messages|'                    +
+          				'\\bdal.set.error.message|\\bdal.start.business.method|'     +
+          				'\\bdal.update|\\bdata.input|\\bdate.num|\\bdate.time.utc|'  +
+          				'\\bdate.to.inputstr\\$|\\bdate.to.num|\\bdb.bind|'          +
+          				'\\bdb.change.order|\\bdb.check.restricted|'                 +
+          				'\\bdb.check.row.changed|\\bdb.check.row.domains|'           +
+          				'\\bdb.clear.table|\\bdb.columns.to.record|\\bchm[\\:]{0,1}|'+
+          				'\\bdb.create.table|\\bdb.curr|\\bdb.delete|\\bdb.drop.table|'+
+          				'\\bdb.eq|\\bdb.error|\\bdb.error.message|\\bdb.first|'      +
+          				'\\bdb.ge|\\bdb.gt|\\bdb.indexinfo|\\bdb.insert|\\bdb.last|' +
+          				'\\bdb.le|\\bdb.lock.table|\\bdb.lt|\\bdb.next|'             +
+          				'\\bdb.nr.indices|\\bdb.nr.rows|\\bdb.permission|\\bdb.prev|'+
+          				'\\bdb.record.to.columns|\\bdb.ref.handle.mode|'             +
+          				'\\bdb.retry.point|\\bdb.retry.hit|\\bdb.row.length|'        +
+          				'\\bdb.set.to.default|\\bdb.unbind|\\bdb.update|\\bdec|'     +
+          				'\\bdecompress.pixmap|\\bdel.window|\\bdelch$|\\bdeleteln\\$|'+
+                  '\\bdestroy.mwindow|\\bdestroy.object|'				               +
+        				  '\\bdestroy.progress.indicator|\\bdestroy.sub.object|'       +
+        				  '\\bdestroy.tree|\\bdisable.commands|\\bdisable.fields|'     +
+        				  '\\bdisable.group|\\bdisplay|\\bdisplay.all|'                +
+        				  '\\bdisplay.curr.occ|\\bdisplay.fld|\\bdisplay.occ|'         +
+        				  '\\bdir.select.dialog.local|\\bdo.all.occ|\\bdo.occ|'        +
+        				  '\\bdo.occ.without.update|\\bdouble.cmp|\\bdte\\$|'          +
+        				  '\\bdump.window|\\bedit\\$|\\bel\\$|\\benable.fields|\\bend|'+
+        				  '\\benum.descr\\$|\\bes\\$|\\betol|\\bexec_dll_function|'    +
+        				  '\\bexec_function|\\bexecute|\\bexit|\\bexp|\\bexport|'      +
+        				  '\\bexpr.compile|\\bexpr.free|\\bff\\$|\\bfg\\$|\\bfile.cp|' +
+        				  '\\bfile.rm|\\bfile.stat|\\bfirst.window|\\bform.text\\$|'   +
+        				  '\\bformat.round|\\bfree.mem|\\bfs\\$|\\bfstat.info|'        +
+        				  '\\bget.arg.type|\\bget.argc|\\bget.col|\\bget.company|'     +
+        				  '\\bget.compnr|\\bget.cp|\\bget.display.data|'               +
+        				  '\\bget.double.arg|\\bget_function|\\bget.indexed.var|'      +
+        				  '\\bget.long.arg|\\bget.mwindow.attrs|\\bget.mwindow.mode|'  +
+        				  '\\bget.mwindow.size|\\bget.object|\\bget.pgrp|'             +
+        				  '\\bget.pixmap.info|\\bget.resource\\$|\\bget.row|'          +
+        				  '\\bget.sub.object|\\bget.screen.defaults|\\bget.string.arg|'+
+        				  '\\bget.tree.default|\\bget.tree.node.dpress|'               +
+        				  '\\bget.tree.node.press|\\bget.tree.push.button|\\bget.var|' +
+        				  '\\bget.window.attrs|\\bgetenv\\$|\\bgrab.mwindow|'          +
+        				  '\\bgreen.component|\\bhostname\\$|\\bimport|\\binc|'        +
+        				  '\\binput|\\binput.again|\\binputstr.to.date|'               +
+        				  '\\binputfield.invisible|\\binputfield.visible|\\binsch\\$|' +
+        				  '\\binsertln\\$|\\bint|\\bis.field.invisible|\\bis.option.on|'+
+        				  '\\bisdigit|\\bisspace|\\bkeyin\\$|\\bkill|\\bkill.pgrp|'    +
+        				  '\\bkill.timer|\\bl.expr|\\blast.window|\\blayout.again|'    +
+        				  '\\blen|\\blen.in.bytes|\\blf\\$|\\bload.byte|\\bload_dll|'  +
+        				  '\\bload.double|\\bload.float|\\bload.long|\\bload.short|'   +
+        				  '\\blocal.to.utc|\\blog|\\blog10|\\blower.object|\\blpow|'   +
+        				  '\\bltoe|\\blval|\\bmake.current|\\bmap.object|\\bmap.window|'+
+                  '\\bmark.handler|\\bmark.occ|\\bmax|\\bmb.cast\\$|'		       +
+        				  '\\bmb.cast.to.str\\$|\\bmb.char|\\bmb.char.info|'           +
+        				  '\\bmb.display|\\bmb.export\\$|\\bmb.hasbidi|'               +
+        				  '\\bmb.import\\$|\\bmb.isbidi|\\bmb.isbidi.language|'        +
+        				  '\\bmb.kb.lang|\\bmb.locale.info|\\bmb.localename\\$|'       +
+        				  '\\bmb.long.to.str\\$|\\bmb.nsets|\\bmb.rev\\$|\\bmb.scrpos|'+
+        				  '\\bmb.set.info|\\bmb.strpos|\\bmb.type|\\bmb.width|\\bmess|'+
+        				  '\\bmessage|\\bmethod.is.allowed|\\bmin|\\bmkdir|'           +
+        				  '\\bmove.window|\\bnew.window|\\bnext.event|\\bno.scroll|'   +
+        				  '\\bnot.curr|\\bnot.fixed|\\bnum.to.date|\\bnum.to.date\\$|' +
+        				  '\\bnum.to.week|\\boff.change.check|\\bon.change.check|'     +
+        				  '\\bon.main.table|\\bon.old.occ|\\bopen.message|\\bostype|'  +
+        				  '\\bparse_and_exec_function|\\bpathname\\&|\\bpath.combine|' +
+        				  '\\bpath.filename|\\bpath.change.extension|'                 +
+        				  '\\bpath.filename.without.extension|\\bpath.extension|'      +
+        				  '\\bpath.directory|\\bpc\\$|\\bpcm.activate.session|'        +
+        				  '\\bpcm.change.object|\\bpcm.change|\\bpcm.create.object|'   +
+        				  '\\bpcm.create|\\bpcm.destroy.object|\\bpcm.destroy|'        +
+        				  '\\bpcm.get.data|\\bpcm.lock|\\bpcm.refresh|'                +
+        				  '\\bpcm.send.event|\\bpeek.event|\\bpending.events|'         +
+        				  '\\bpf\\$|\\bpid|\\bpipe.clearerr|\\bpipe.close|\\bpipe.eof|'+
+        				  '\\bpipe.error|\\bpipe.flush|\\bpipe.gets|\\bpipe.open|'     +
+        				  '\\bpipe.puts|\\bpipe.read|\\bpipe.write|\\bpos|\\bpow|'     +
+        				  '\\bprint.const|\\bput.double.arg|\\bput.indexed.var|'       +
+        				  '\\bput.long.arg|\\bput.string.arg|\\bput.var|\\bqss.search|'+
+        				  '\\bqss.sort|\\bquery.extend.select|'                        +
+        				  '\\bquery.extend.select.in.zoom|\\bquery.extend.from|'       +
+        				  '\\bquery.extend.from.in.zoom|\\bquery.extend.where|'        +
+        				  '\\bquery.extend.where.in.zoom|\\bquery.object|'             +
+        				  '\\braise.object|\\brandom|\\brdi.audit.hosts|'              +
+        				  '\\brdi.column.combined|\\brdi.column|'                      +
+        				  '\\brdi.date.input.format\\$|\\brdi.domain.byte|'            +
+        				  '\\brdi.domain.combined|\\brdi.domain.date|'                 +
+        				  '\\brdi.domain.double|\\brdi.domain.enum|'                   +
+        				  '\\brdi.domain.enum.value|\\brdi.domain.float|'              +
+        				  '\\brdi.domain.integer|\\brdi.domain.long|'                  +
+        				  '\\brdi.domain.mail|\\brdi.domain.set|\\brdi.domain.string|' +
+        				  '\\brdi.domain.set.value|\\brdi.domain.text|\\brdi.domain|'  +
+        				  '\\brdi.first.day.of.week|\\brdi.index|\\brdi.reference|'    +
+        				  '\\brdi.table|\\brdi.table.column|\\breactivate|'            +
+        				  '\\breceive.bucket|\\brecv.message|\\bred.component|'        +
+        				  '\\brefresh|\\brefresh.curr.occ|\\bremove.mark|'             +
+        				  '\\bresize.window|\\brestore.rcd.main|\\breturn|\\brgb|'     +
+        				  '\\brnd.d|\\brnd.i|\\brnd.init|\\bround|\\brpos|'            +
+        				  '\\brprt_close|\\brprt_open|\\brprt_send|\\brsc.boolean|'    +
+        				  '\\brsc.double|\\brsc.enum|\\brsc.font.spec|\\brsc.get|'     +
+        				  '\\brsc.long|\\brsc.put|\\brsc.reload|\\brsc.setboolean|'    +
+        				  '\\brsc.setdouble|\\brsc.setenum|\\brsc.setlong|'            +
+        				  '\\brsc.setstring|\\brsc.string|\\bs.expr|\\bscroll|'        +
+        				  '\\bselect.event.input|\\bsend.bucket|\\bsend.event|'        +
+                  '\\bsend.message|\\bsend.wait|\\bserver2client|'             +
+        				  '\\bseq.clearerr|\\bseq.close|\\bseq.eof|\\bseq.error|'      +
+        				  '\\bseq.flush|\\bseq.getc\\$|\\bseq.gets|\\bseq.is.locked|'  +
+        				  '\\bseq.lock|\\bseq.open|\\bseq.putc\\$|'                    +
+        				  '\\bseq.open.dialog.local|\\bseq.puts|\\bseq.read|'          +
+        				  '\\bseq.rewind|\\bseq.seek|\\bseq.skip|\\bseq.tell|'         +
+        				  '\\bseq.ungetc\\$|\\bseq.unlink|\\bseq.unlock|\\bseq.write|' +
+        				  '\\bset.alarm|\\bset.bg.color|\\bset.bitset.values|'         +
+        				  '\\bset.enum.values|\\bset.enum.values.for.field|'           +
+        				  '\\bset.fg.color|\\bset.fields.default|\\bset.fmax|'         +
+        				  '\\bset.fmin|\\bset.focus|\\bset.input.error|'               +
+        				  '\\bset.limits.off|\\bset.max|\\bset.mem|\\bset.min|'        +
+        				  '\\bset.mwindow.mode|\\bset.mwindow.size|'                   +
+        				  '\\bset.mwindow.title|\\bset.node.class.color|'              +
+        				  '\\bset.node.class|\\bset.pgrp|\\bset.sensitive|\\bset.|'    +
+        				  '\\bd.dialog|\\bset.timer|\\bset.tree.background|'           +
+        				  '\\bset.tree.font|\\bset.tree.foreground|'                   +
+        				  '\\bset.tree.linewidth|\\bset.tree.name|'                    +
+        				  '\\bset.transaction.readonly|\\bsf\\$|\\bshell|\\bshiftc\\$|'+
+        				  '\\bshiftl\\$|\\bshiftr\\$|\\bsignal|\\bsin|\\bsinh|'        +
+        				  '\\bskip.io|\\bsleep|\\bspool.buf|\\bspool.close|'           +
+        				  '\\bspool.line|\\bspool.open|\\bsprintf\\$|\\bsql.break|'    +
+        				  '\\bsql.close|\\bsql.exec|\\bsql.fetch|\\bsql.parse|'        +
+        				  '\\bsql.select.bind|\\bsql.where.bind|\\bsqrt|\\bsrand|'     +
+        				  '\\bstart.application.local|\\bstat.info|\\bstatus.del|'     +
+        				  '\\bstatus.field|\\bstatus.mess|\\bstatus.off|\\bstatus.on|' +
+        				  '\\bstop|\\bstore.byte|\\bstore.double|\\bstore.float|'      +
+        				  '\\bstore.long|\\bstore.occ.max|\\bstore.occ.min|'           +
+        				  '\\bstore.short|\\bstp.reset.value|\\bstr\\$|\\bstring.scan|'+
+        				  '\\bstring.set\\$|\\bstrip\\$|\\bsub.window|\\bsuspend|'     +
+        				  '\\bswitch.to.company|\\bswitch.to.process|\\btab\\$|'       +
+        				  '\\btable.round|\\btan|\\btanh|\\btext.copy|'                +
+        				  '\\btext.copy.language|\\btext.copy.between.companies|'      +
+        				  '\\btext.defaults|\\btext.delete|\\btext.edit|'              +
+        				  '\\btext.present.in.language|\\btext.read|\\btext.rewrite|'  +
+        				  '\\btext.to.buf|\\btext.window|\\btext.write|\\btime.num|'   +
+        				  '\\btimes.off|\\btimes.on|\\btrim\\$|\\bto.field|\\bto.form|'+
+        				  '\\bto.key|\\btolower\\$|\\btoupper\\$|'                     +
+        				  '\\btt.bobject.desc|\\btt.chm.appl.desc|'                    +
+        				  '\\btt.chm.chart|\\btt.chm.charttype|\\btt.company|'         +
+        				  '\\btt.device|\\btt.field.desc|\\btt.index.desc|'            +
+        				  '\\btt.library|\\btt.menu.desc|\\btt.menu.present|'          +
+        				  '\\btt.reportgroup.exists|\\btt.session.desc|'               +
+        				  '\\btt.session.permission|\\btt.session.present|'            +
+        				  '\\btt.short.field.desc|\\btt.table.desc|\\btt.user|'        +
+        				  '\\bttyname\\$|\\bunmap.object|\\bunmap.window|'             +
+        				  '\\bupdate.object|\\bupdate.occ|\\butc.num|'                 +
+        				  '\\buser.exists&#x000D;&#x000A;utc.to.local|\\biso.to.utc|'  +
+        				  '\\butc.to.iso|\\bval|\\bview.tree|\\bvsprintf\\$|\\bwait|'  +
+        				  '\\bwait.and.activate|\\bwait.for.switch|\\bweek.to.num|'    +
+        				  '\\bwith.object.set.do|\\bwrebuild|\\bzoom.to\\$|'           +
+                  '\\btt.chm.application|\\btt.align.according.domain|'        +
+                  '\\btt.report.desc|\\btt.currency|\\btt.language|\\bttyname|'+
+                  '\\bunset.focus|\\buuid.generate\\$)'
+
+    'captures':
+        '1':
+            'name': 'storage.type.function.baan'
+  }
+
+  #Keywords 4
+  {
+        'match': '(\\bempty|\\bfalse|\\btrue|\\bactual.occ|\\battr.bitset.mask|'+
+      				   '\\battr.cf|\\battr.color|\\battr.currkey|\\battr.dbase|'     +
+      				   '\\battr.dbmaxlen|\\bttr.deflt\\$|\\battr.descr\\$|'          +
+      				   '\\battr.diga|\\battr.digv|\\battr.dorp|\\battr.echo|'        +
+      				   '\\battr.element|\\battr.enum.mask\\$|\\battr.helpfile\\$|'   +
+      				   '\\battr.inpfld|\\battr.input|\\battr.maxlen|'                +
+      				   '\\battr.message\\$|\\battr.minlen|\\battr.multioccur|'       +
+      				   '\\battr.nowait\\$|\\battr.oformat\\$|\\battr.permission|'    +
+      				   '\\battr.previous\\$|\\battr.reallen|\\battr.tab|'            +
+      				   '\\battr.textcol|\\battr.textfield\\$|\\battr.textkw1\\$|'    +
+      				   '\\battr.textkw4\\$|\\battr.textlang\\$|\\battr.textline\\$|' +
+      				   '\\battr.textmaxlines|\\battr.textmode|\\battr.textstart|'    +
+      				   '\\battr.textzoomsession\\$|\\battr.zoomcode|'                +
+      				   '\\battr.zoomreturn\\$|\\battr.zoomsession\\$|'               +
+      			  	 '\\bauto.nextform|\\bbackground|\\bbefore.update.check|'      +
+      				   '\\bchm.name|\\bchm.owner|\\bchm.title|\\bchm.user|'          +
+      				   '\\bchoice|\\bcurr.key|\\bcurr.pacc\\$|\\bdate|\\bdate\\$|'   +
+      				   '\\be\\b|\\berror.bypass|\\bexit.val\\$|\\bfattr.col|'        +
+      				   '\\bfattr.currfld\\$|\\bfattr.descr\\$|'                      +
+      				   '\\bfattr.firstfld\\$|\\bfattr.ftype|\\bfattr.height|'        +
+      				   '\\bfattr.helpfile\\$|\\bfattr.nextfld\\$|\\bfattr.occurnr|'  +
+      				   '\\bfattr.prevfld\\$|\\bfattr.row|\\bfattr.scrollbar|'        +
+      				   '\\bfattr.toplines|\\bfattr.vdate\\$|\\bfattr.version\\$|'    +
+      				   '\\bfattr.width|\\bfilename\\$|\\bfilled.occ|\\bform.curr|'   +
+      				   '\\bform.next|\\bform.prev|\\bfree\\$|\\bgraphical.mode|'     +
+      				   '\\bignore.first.event|\\bin.ret|\\bjob.device|'              +
+      				   '\\bjob.device.requested|\\bjob.process|'                     +
+      				   '\\bjob.process.error|\\bjob.skip.date.question|'             +
+      				   '\\blanguage\\$|\\blogname\\$|\\bmain.table\\$|'              +
+      				   '\\bmark.status|\\bmarked|\\bmax.formtabs|\\bmaxdouble|'      +
+      				   '\\bnumber.forms|\\bparent|\\bpid|\\bprevious.choice|'        +
+      				   '\\bprocesinfo\\$|\\bprog.name\\$|\\bquery.extension|'        +
+      				   '\\breportgrp|\\breportno|\\bsattr.combined|'                 +
+      				   '\\bstp.abort.error|\\bstp.check.input.error|'                +
+      				   '\\bstp.skip.error|\\bterm\\$|\\btime|\\bupdate.status|'      +
+      				   '\\buser.type\\$|\\bzoomfield\\$|\\bzoomreturn\\$|'           +
+      				   '\\bspool.device|\\bspool.fileout|\\bspool.id|'               +
+      				   '\\bspool.left.mrg|\\bspool.report|\\bspool.paper.type|'      +
+      				   '\\bspool.pg.length|\\bspool.pg.width|'                       +
+      				   '\\bspool.pr.copies|\\bspool.pr.line|'                        +
+      				   '\\bspool.view.rtl|\\bspool.time)'
     'captures':
         '1':
             'name': 'storage.type.function.baan'
