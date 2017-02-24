@@ -2,7 +2,10 @@
   "name": "language-baan",
   "version": "0.10.0",
   "description": "BaaN language support for Atom",
-  "dependencies": {},
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "event-kit": "latest",
+    "q": "~1.0.1"},
   "repository": {
     "type": "git",
     "url": "https://github.com/alejandrofierro/language-baan"
@@ -12,6 +15,7 @@
     "baan"
   ],
   "license": "MIT",
+  "main": "./lib/main",
   "engines": {
     "atom": "*"
   }
