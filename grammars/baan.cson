@@ -22,7 +22,7 @@
 
   #All reserved words starting with #
   {
-    'match': '\\s*(#define|#include|#error|#ident|#elif|#if|#line|#else|'      +
+    'match': '\\s*(#defin|#include|#error|#ident|#elif|#if|#line|#else|'      +
              '#ifdef|#pragma|#endif|#ifndef|#undef)\\s'
 
     'captures':
